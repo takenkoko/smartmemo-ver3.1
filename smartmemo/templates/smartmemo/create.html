@@ -1,17 +1,51 @@
-<h1>新しいメモ</h1>
+<!DOCTYPE html>
+<html lang="ja">
 
-<form method="post">
+    <header>
+        <meta charset="UTF-8">
+        <title>新しいメモ-SmartMemo</title>
 
-    {% csrf_token%}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    </header>
+    <body>
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">
+                新しいメモ
+            </h1>
+            
+            <from class="post">
+                {% csrf_token%}
+                
+                <div class="mb-3">
+                    <label class="form-label">
+                        
+                        タイトル
 
-    <p>タイトル</p>
-    <input type="text" name="title">
+                    </label>
+                    <input type="text" name="title" class="form-control">
 
-    <p>内容</p>
-    <textarea name="content"></textarea>
 
-    <br><br>
+                 </div>
 
-    <button type="submit">保存</button>
+                 <div class="mb-3">
+                    <label class="form-label">
+                        
+                        内容
+                    </label>
+                    <textarea name="content" class="form-control" rows="6"></textarea>
 
-</form>
+                 </div>
+
+                 <button type="submit" class="btn btn-success">
+                    保存
+                </button>
+
+                <a href="/" class="btn btn-secondary">
+                    戻る
+                </a>
+
+            </from>
+        </div>
+    </body>
+</html>

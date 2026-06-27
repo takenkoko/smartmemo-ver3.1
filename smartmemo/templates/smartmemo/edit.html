@@ -1,17 +1,40 @@
-<h1>メモを編集</h1>
+<!DOCTYPE html>
+<html lang="ja">
+    <head lange="ja">
+        <meta charset="UTF-8">
+        <title>memo編集-SmartMemo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container mt-5">
+            <h1 class="container mb-4">
+                メモを編集
+            </h1> 
+            
+            <form method="post">
+                {%csrf_token%}
+                
+                <div class="mb-3">
+                    <label class="form-label">タイトル</label>
+                    <input type="text" name="title" value="{{memo.title}}" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">内容</label>
+                    <textarea 
+                    name="content" 
+                    rows="6"
+                    class="form-control">{{memo.content}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">
+                    更新
+                </button>
+                <a href="/" class="btn btn-secondary">
+                    戻る
+                </a>
+            </form>
+        </div>
+    </body>
+</html>
 
-<form method="post">
-
-    {%csrf_token%}
-
-    <p>タイトル</p>
-    <input type="text" name="title" value="{{memo.title}}">
-
-    <p>内容</p>
-    <textarea name="content">{{memo.content}}</textarea>
-
-    <br><br>
-
-    <button type="submit">更新</button>
-
-</form>
