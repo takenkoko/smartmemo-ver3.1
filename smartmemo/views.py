@@ -62,6 +62,7 @@ def search(request):
         request,
         "smartmemo/index.html",
         {
-            "memos":memos
+            "memos":memos,
+            "keyword":keyword,
         }
     )
