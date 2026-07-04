@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Memo
+from .models import Memo, Category
 from django.db.models import Q
 
 # Create your views here.
@@ -15,13 +15,24 @@ def create(request):
         
         title=request.POST["title"]
         content=request.POST["content"]
+        category_id = request.POST.get("category")
+
+        category = None
+        if category_id:
+            category = Category.objects.get(id=category_id)
 
         Memo.objects.create(
             title=title,
-            content=content
+            content=content,
+            category=category
         )
         return redirect("index")
-    return render(request,"smartmemo/create.html")
+    return render(request,
+                  "smartmemo/create.html",
+                  {
+                      "categories":Category.objects.all()
+                  }
+                  )
 
 #編集機能を作成
 def edit(request,memo_id):

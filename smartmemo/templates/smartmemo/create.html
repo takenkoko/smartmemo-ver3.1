@@ -19,13 +19,29 @@
                 
                 <div class="mb-3">
                     <label class="form-label">
-                        
                         タイトル
-
                     </label>
                     <input type="text" name="title" class="form-control">
+                 </div>
 
+                 <!--カテゴリ-->
+                 <div class="mb-3">
+                    <label class="form-label">
+                        カテゴリ
+                    </label>
+                    <select name="category" class="form-select">
+                        <option value="">
+                            --------
+                        </option>
+                        {% for category in categories %}
+                        
+                        <option value="{{ category.id }}">
+                            {{ category.name }}
+                        </option>
 
+                        {% endfor %}
+
+                    </select>
                  </div>
 
                  <div class="mb-3">
