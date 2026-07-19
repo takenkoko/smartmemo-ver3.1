@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def index(request):
-    memos=Memo.objects.all()
+    memos=Memo.objects.filter(user=request.user)#
     return render(request,"smartmemo/index.html",{
         "memos":memos,
     })
@@ -25,6 +25,7 @@ def create(request):
             category = Category.objects.get(id=category_id)
 
         Memo.objects.create(
+            user=request.user,
             title=title,
             content=content,
             category=category
@@ -40,7 +41,7 @@ def create(request):
 #編集機能を作成
 @login_required
 def edit(request,memo_id):
-    memo = Memo.objects.get(id=memo_id)
+    memo = Memo.objects.get(id=memo_id, user=request.user,)
 
     #更新処理を作成
     if request.method=="POST":
@@ -59,7 +60,7 @@ def edit(request,memo_id):
 #削除機能を作成
 @login_required
 def delete(request,memo_id):
-    memo=Memo.objects.get(id=memo_id)
+    memo=Memo.objects.get(id=memo_id, user=request.user,)
 
     memo.delete()
     
@@ -69,11 +70,16 @@ def delete(request,memo_id):
 @login_required
 def search(request):
     keyword = request.GET.get("keyword","")
-
+    
+    #ログインユーザーのメモだけ検索する
     memos= Memo.objects.filter(
-        Q(title__icontains=keyword)|
-        Q(content__icontains=keyword)
-    )
+        user=request.user
+        ).filter(
+            Q(title__icontains=keyword)|
+            Q(content__icontains=keyword)
+
+        )
+    
 
     return render(
         request,
@@ -88,8 +94,8 @@ def search(request):
 @login_required
 def category(request,category_id):
     category = Category.objects.get(id=category_id)
-
-    memos = Memo.objects.filter(category=category)
+    #ログインユーザーのメモだけ、そのカテゴリを表示する
+    memos = Memo.objects.filter(user=request.user,category=category)
 
     return render(
         request,
