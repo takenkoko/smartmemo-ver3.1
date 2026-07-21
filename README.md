@@ -1,9 +1,15 @@
-# SmartMemo Ver3.0
+# SmartMemo Ver3.2
 
 【アプリのスクリーンショット】
-![SmartMemo](screenshots/home_sample2.0.png)
 
-DjangoとBootstrapで構築したシンプルなメモアプリです。
+- ログイン画面
+![SmartMemo](screenshots/login_sample3.2.png)
+
+- メイン画面
+![SmartMemo](screenshots/main_home_sample3.2.png)
+
+
+Django・Bootstrap・CSSで構築したシンプルなメモ管理Webアプリです。
 
 ## Features(主な機能)
 - Create memo
@@ -16,11 +22,14 @@ DjangoとBootstrapで構築したシンプルなメモアプリです。
 - User-specific memo management
 - Bootstrap UI
 - Responsive navigation bar
+- Custom CSS
+- Login page UI improvements
 
 ## Tech Stack
 - Python
 - Django
 - Bootstrap 5
+- CSS3
 - SQLite 
 - Git
 - GitHub
@@ -33,15 +42,12 @@ DjangoとBootstrapで構築したシンプルなメモアプリです。
 - Code syntax highlighting
 - Dark mode
 
-  ## Ver3.0　更新内容
-- ✅ナビゲーションバーを追加　
-- ✅検索機能 を追加　
-- ✅検索機能不具合を修正
-- ✅カテゴリ機能を追加
-- ✅ログイン機能を追加
-- ✅ログアウト機能を追加
-- ✅'@login_required'による認証機能を追加
-- ✅ユーザーごとのメモ管理機能を実装
+  ## Ver3.2　更新内容
+- ✅ Custom CSSを追加
+- ✅ Bootstrap + CSSによるUI改善
+- ✅ ログイン画面をカードデザイン化
+- ✅ AuthenticationFormをカスタマイズ
+- ✅ Bootstrap対応ログインフォーム
 
 
   ## 開発メモ
