@@ -1,0 +1,28 @@
+{% extends "smartmemo/base.html" %}
+
+{% block title %}
+ユーザ―登録
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        
+        <div class="col-md-5">
+            <div class="card login-card">
+                <div class="card-body">
+                    <h2 class="login-title">ユーザー登録</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p}}
+                        
+                        <button type="submit" class="btn btn-success btn-login">
+                            登録
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from .models import Memo, Category
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from .forms import RegisterForm #ユーザー登録機能
+from django.shortcuts import render,redirect
 
 # Create your views here.
 @login_required
@@ -105,3 +107,26 @@ def category(request,category_id):
             "selected_category":category,
         }
     )
+
+#ユーザー登録機能
+def register(request):
+
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect("login")
+        
+    else:
+        form = RegisterForm()
+
+    return render(
+        request,
+        "smartmemo/register.html",
+        {
+            "form": form,
+        }
+    )
+

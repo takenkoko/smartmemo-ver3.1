@@ -30,11 +30,13 @@
                         ⚠️ユーザー名またはパスワードが間違っています。
                     </div>
                     {% endif %}
+
+                    <!--自動モードから自由にデザインできるように設定-->
  
                     <form method="post">
 
                         {% csrf_token %}
-
+                        
                         <div class="mb-3">
                             <label class="form-label">
                                 {{ form.username.label}}
@@ -56,6 +58,10 @@
                         <button type="submit" class="btn btn-primary btn-login">
                             ログイン
                         </button>
+
+                        <a href="{% url 'register' %}">
+                            新規登録はこちら
+                        </a>
 
                     </form>
 
