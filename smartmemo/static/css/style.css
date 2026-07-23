@@ -52,6 +52,17 @@ Smartmemo login 画面UIデザインを作成
     font-weight: bold;
     margin-bottom: 15px;
 }
+
+/*キャッチコピーを追加*/
+.login-tagline-inline{
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+}
+
 /*サブタイトル*/
 .login-subtitle{
     text-align: center;
