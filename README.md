@@ -22,10 +22,10 @@
 ![SmartMemo](screenshots/Error(1)_4.0.png)
 
 - ユーザー登録画面
-![SmartMemo](screenshots/ca_4.0.png)
+![Register](screenshots/register_4.0.png)
 
 - ユーザー登録パスワードが一致しないときアラート画面
-![Category Error](screenshots/category_error.png) 
+![password Error](screenshots/password_error.png) 
 
 
 Django・Bootstrap・CSSで構築したシンプルなメモ管理Webアプリです。
