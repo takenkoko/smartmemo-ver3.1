@@ -19,7 +19,7 @@
 ![SmartMemo](screenshots/main_4.0.png)
 
 - ログイン失敗時のアラート画面
-![SmartMemo](screenshots/login_error3.1.png)
+![SmartMemo](screenshots/Error(1)_4.0.png)
 
 - ユーザー登録画面
 ![SmartMemo](screenshots/Ca_4.0.png)
