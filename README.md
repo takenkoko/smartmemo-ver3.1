@@ -13,19 +13,19 @@
 【アプリのスクリーンショット】
 
 - ログイン画面
-![SmartMemo](screenshots/login_4.0.png)
+![SmartMemo](screenshots/login_v4.0.png)
 
 - メイン画面
-![SmartMemo](screenshots/main_4.0.png)
+![SmartMemo](screenshots/main_v4.0.png)
 
 - ログイン失敗時のアラート画面
-![SmartMemo](screenshots/Error(1)_4.0.png)
+![SmartMemo](screenshots/Error(1)_v4.0.png)
 
 - ユーザー登録画面
-![Register](screenshots/register_4.0.png)
+![Register](screenshots/register_v4.0.png)
 
 - ユーザー登録パスワードが一致しないときアラート画面
-![password Error](screenshots/password_error.png) 
+![password Error](screenshots/password_error_v4.0.png) 
 
 
 Django・Bootstrap・CSSで構築したシンプルなメモ管理Webアプリです。
